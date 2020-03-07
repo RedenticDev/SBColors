@@ -1,9 +1,9 @@
 Package: com.redenticdev.sbcolors
 Name: SBColors
-Depends: mobilesubstrate
+Depends: mobilesubstrate, firmware (>= 13)
 Version: 0.0.1
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
-Maintainer: RedenticDev
-Author: RedenticDev
+Description: Easily change your status bar colors!
+Maintainer: RedenticDev <redenticdev@gmail.com>
+Author: RedenticDev <redenticdev@gmail.com>
 Section: Tweaks
