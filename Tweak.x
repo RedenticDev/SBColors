@@ -1,53 +1,90 @@
 #import <UIKit/UIKit.h>
+#import "Tweak.h"
 
-@interface _UIStatusBarPersistentAnimationView : UIView
-@end
-
-@interface _UIStatusBarSignalView : _UIStatusBarPersistentAnimationView
-@property (nonatomic,copy) UIColor * inactiveColor;
-@property (nonatomic,copy) UIColor * activeColor;
-@end
-
-@interface _UIStatusBarWifiSignalView : _UIStatusBarSignalView
-@end
-
-@interface _UIStatusBarStringView : UILabel
-@end
-
-@interface _UIBatteryView : UIView
-@end
-
-@interface _UIStaticBatteryView : _UIBatteryView
-@property (nonatomic, copy, readwrite) UIColor *bodyColor;
-@property (nonatomic, copy, readwrite) UIColor *fillColor;
-@end
-
+%group SBColors
 
 %hook _UIStatusBarStringView
 
-- (void)layoutSubviews {
-    %orig;
-    self.textColor = [UIColor redColor];
+- (void)layoutSubviews { // À changer
+    if (enabled) {
+        %orig;
+        self.textColor = [UIColor redColor];
+    }
 }
 
 %end
 
 %hook _UIStaticBatteryView
 
-- (void)layoutSubviews {
-    %orig;
-    self.bodyColor = [UIColor redColor];
-    self.fillColor = [UIColor redColor];
+- (UIColor*)bodyColor {
+    if (enabled) {
+        return [UIColor redColor];
+    }
+    return %orig;
+}
+
+- (UIColor*)fillColor {
+    if (enabled) {
+        return [UIColor redColor];
+    }
+    return %orig;
+}
+
+%end
+
+%hook _UIStatusBarSignalView
+
+- (UIColor*)activeColor {
+    if (enabled) {
+        return [UIColor redColor];
+    }
+    return %orig;
+}
+
+- (UIColor*)inactiveColor {
+    if (enabled) {
+        return [UIColor greenColor];
+    }
+    return %orig;
 }
 
 %end
 
 %hook _UIStatusBarWifiSignalView
 
-- (void)layoutSubviews {
-    %orig;
-    self.activeColor = [UIColor greenColor];
-    self.inactiveColor = [UIColor cyanColor];
+- (UIColor*)activeColor {
+    if (enabled) {
+        return [UIColor redColor];
+    }
+    return %orig;
+}
+
+- (UIColor*)inactiveColor {
+    if (enabled) {
+        return [UIColor greenColor];
+    }
+    return %orig;
 }
 
 %end
+
+%hook _UIStatusBarImageView
+
+- (UIColor*)tintColor {
+    if (enabled) {
+        return [UIColor redColor];
+    }
+    return %orig;
+}
+
+%end
+
+%end
+
+%ctor {
+    prefs = [[HBPreferences alloc] initWithIdentifier:@"com.redenticdev.sbcolors"];
+    [prefs registerBool:&enabled default:YES forKey:@"Enabled"];
+    if (enabled) {
+        %init(SBColors);
+    }
+}
