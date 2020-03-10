@@ -86,6 +86,17 @@
 
 %end
 
+%hook JCESBShapeView // Juice Beta support
+
+- (UIColor*)statusBarFillColour {
+    if (enabled) {
+        return [UIColor orangeColor];
+    }
+    return %orig;
+}
+
+%end
+
 %hook _UIStatusBarImageView // Small logos on status bar (Rotation, DND, Alarm...)
 
 - (UIColor*)tintColor {
