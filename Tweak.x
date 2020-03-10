@@ -3,76 +3,94 @@
 
 %group SBColors
 
-%hook _UIStatusBarStringView
+%hook _UIStatusBarStringView // Other strings
 
 - (void)layoutSubviews { // À changer
     if (enabled) {
         %orig;
-        self.textColor = [UIColor redColor];
+        self.textColor = [UIColor purpleColor];
     }
 }
 
 %end
 
-%hook _UIStaticBatteryView
+%hook _UIStaticBatteryView // CC Battery
 
 - (UIColor*)bodyColor {
     if (enabled) {
-        return [UIColor redColor];
+        return [UIColor brownColor];
     }
     return %orig;
 }
 
 - (UIColor*)fillColor {
     if (enabled) {
-        return [UIColor redColor];
+        return [UIColor orangeColor];
     }
     return %orig;
 }
 
 %end
 
-%hook _UIStatusBarSignalView
+%hook _UIBatteryView // Battery
 
-- (UIColor*)activeColor {
+- (UIColor*)bodyColor {
     if (enabled) {
-        return [UIColor redColor];
+        return [UIColor brownColor];
     }
     return %orig;
 }
 
-- (UIColor*)inactiveColor {
+- (UIColor*)fillColor {
+    if (enabled) {
+        return [UIColor orangeColor];
+    }
+    return %orig;
+}
+
+%end
+
+%hook _UIStatusBarSignalView // LTE bars
+
+- (UIColor*)activeColor {
     if (enabled) {
         return [UIColor greenColor];
     }
     return %orig;
 }
 
-%end
-
-%hook _UIStatusBarWifiSignalView
-
-- (UIColor*)activeColor {
+- (UIColor*)inactiveColor {
     if (enabled) {
         return [UIColor redColor];
     }
     return %orig;
 }
 
+%end
+
+%hook _UIStatusBarWifiSignalView // Wifi icon
+
+- (UIColor*)activeColor {
+    if (enabled) {
+        return [UIColor cyanColor];
+    }
+    return %orig;
+}
+
 - (UIColor*)inactiveColor {
     if (enabled) {
-        return [UIColor greenColor];
+        return [UIColor blueColor];
     }
     return %orig;
 }
 
 %end
 
-%hook _UIStatusBarImageView
+%hook _UIStatusBarImageView // Small logos on status bar (Rotation, DND, Alarm...)
 
 - (UIColor*)tintColor {
     if (enabled) {
-        return [UIColor redColor];
+        return [UIColor yellowColor];
     }
     return %orig;
 }

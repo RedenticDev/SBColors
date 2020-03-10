@@ -24,9 +24,9 @@ HBPreferences *prefs;
 @end
 
 @interface _UIBatteryView : UIView
+@property (nonatomic, copy) UIColor *bodyColor;
+@property (nonatomic, copy) UIColor *fillColor;
 @end
 
 @interface _UIStaticBatteryView : _UIBatteryView
-@property (nonatomic, copy) UIColor *bodyColor;
-@property (nonatomic, copy) UIColor *fillColor;
 @end
