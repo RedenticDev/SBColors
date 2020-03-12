@@ -20,7 +20,6 @@ HBPreferences *prefs;
 @end
 
 @interface _UIStatusBarStringView : UILabel
-@property (nonatomic, retain) UIColor *textColor;
 @end
 
 @interface _UIBatteryView : UIView

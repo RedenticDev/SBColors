@@ -6,7 +6,7 @@
     self = [super init];
 
     if (self) {
-        AppearanceSettings *appearanceSettings = [[SBCAppearanceSettings alloc] init];
+        HBAppearanceSettings *appearanceSettings = [[SBCAppearanceSettings alloc] init];
         self.hb_appearanceSettings = appearanceSettings;
         self.respringButton = [[UIBarButtonItem alloc] initWithTitle:@"Respring" 
                                     style:UIBarButtonItemStylePlain

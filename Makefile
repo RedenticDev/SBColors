@@ -12,3 +12,4 @@ $(TWEAK_NAME)_CFLAGS = -fobjc-arc
 $(TWEAK_NAME)_EXTRA_FRAMEWORKS = Cephei
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+include $(THEOS_MAKE_PATH)/aggregate.mk

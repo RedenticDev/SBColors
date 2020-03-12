@@ -5,11 +5,12 @@
 
 %hook _UIStatusBarStringView // Other strings
 
-- (void)layoutSubviews { // À changer
-    if (enabled) {
-        %orig;
-        self.textColor = [UIColor purpleColor];
-    }
+- (BOOL)_textColorFollowsTintColor {
+    return enabled ? YES : %orig;
+}
+
+-(id)tintColor {
+    return enabled ? [UIColor purpleColor] : %orig;
 }
 
 %end
@@ -17,17 +18,11 @@
 %hook _UIStaticBatteryView // CC Battery
 
 - (UIColor*)bodyColor {
-    if (enabled) {
-        return [UIColor brownColor];
-    }
-    return %orig;
+    return enabled ? [UIColor brownColor] : %orig;
 }
 
 - (UIColor*)fillColor {
-    if (enabled) {
-        return [UIColor orangeColor];
-    }
-    return %orig;
+    return enabled ? [UIColor orangeColor] : %orig;
 }
 
 %end
@@ -35,17 +30,11 @@
 %hook _UIBatteryView // Battery
 
 - (UIColor*)bodyColor {
-    if (enabled) {
-        return [UIColor brownColor];
-    }
-    return %orig;
+    return enabled ? [UIColor brownColor] : %orig;
 }
 
 - (UIColor*)fillColor {
-    if (enabled) {
-        return [UIColor orangeColor];
-    }
-    return %orig;
+    return enabled ? [UIColor orangeColor] : %orig;
 }
 
 %end
@@ -53,17 +42,11 @@
 %hook _UIStatusBarSignalView // LTE bars
 
 - (UIColor*)activeColor {
-    if (enabled) {
-        return [UIColor greenColor];
-    }
-    return %orig;
+    return enabled ? [UIColor greenColor] : %orig;
 }
 
 - (UIColor*)inactiveColor {
-    if (enabled) {
-        return [UIColor redColor];
-    }
-    return %orig;
+    return enabled ? [UIColor redColor] : %orig;
 }
 
 %end
@@ -71,17 +54,11 @@
 %hook _UIStatusBarWifiSignalView // Wifi icon
 
 - (UIColor*)activeColor {
-    if (enabled) {
-        return [UIColor cyanColor];
-    }
-    return %orig;
+    return enabled ? [UIColor cyanColor] : %orig;
 }
 
 - (UIColor*)inactiveColor {
-    if (enabled) {
-        return [UIColor blueColor];
-    }
-    return %orig;
+    return enabled ? [UIColor blueColor] : %orig;
 }
 
 %end
@@ -89,21 +66,15 @@
 %hook JCESBShapeView // Juice Beta support
 
 - (UIColor*)statusBarFillColour {
-    if (enabled) {
-        return [UIColor orangeColor];
-    }
-    return %orig;
+    return enabled ? [UIColor orangeColor] : %orig;
 }
 
 %end
 
-%hook _UIStatusBarImageView // Small logos on status bar (Rotation, DND, Alarm...)
+%hook _UIStatusBarImageView // Small logos in status bar (Rotation, DND, Alarm...)
 
 - (UIColor*)tintColor {
-    if (enabled) {
-        return [UIColor yellowColor];
-    }
-    return %orig;
+    return enabled ? [UIColor yellowColor] : %orig;
 }
 
 %end
