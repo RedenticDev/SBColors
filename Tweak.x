@@ -3,106 +3,114 @@
 
 %group SBColors
 
-%hook _UIStatusBarStringView // Other strings
+    %hook _UIStatusBarStringView // Other strings
 
-- (BOOL)_textColorFollowsTintColor {
-    return enabled ? YES : %orig;
-}
-
-- (id)tintColor {
-    return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"stringsColor"] withFallback:@"#147efb"] : %orig;
-}
-
-%end
-
-%hook _UIStaticBatteryView // CC Battery
-
-- (UIColor*)bodyColor {
-    return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"] withFallback:@"#147efb"] : %orig;
-}
-
-- (UIColor*)fillColor {
-    return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"] withFallback:@"#147efb"] : %orig;
-}
-
-%end
-
-%hook _UIBatteryView // Battery
-
-- (UIColor*)bodyColor {
-    return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"] withFallback:@"#147efb"] : %orig;
-}
-
-- (UIColor*)fillColor {
-    return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"] withFallback:@"#147efb"] : %orig;
-}
-
-%end
-
-%hook _UIStatusBarSignalView // LTE bars
-
-- (UIColor*)activeColor {
-    return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOnColor"] withFallback:@"#147efb"] : %orig;
-}
-
-- (UIColor*)inactiveColor {
-    return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOffColor"] withFallback:@"#147efb"] : %orig;
-}
-
-%end
-
-%hook _UIStatusBarWifiSignalView // Wifi icon
-
-- (UIColor*)activeColor {
-    return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOnColor"] withFallback:@"#147efb"] : %orig;
-}
-
-- (UIColor*)inactiveColor {
-    return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOffColor"] withFallback:@"#147efb"] : %orig;
-}
-
-%end
-
-%hook JCESBShapeView // Juice Beta support
-
-- (UIColor*)statusBarFillColour {
-    return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"] withFallback:@"#147efb"] : %orig;
-}
-
-%end
-
-%hook _UIStatusBarImageView // Small logos in status bar (Rotation, DND, Alarm...)
-
-- (UIColor*)tintColor {
-    return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"] withFallback:@"#147efb"] : %orig;
-}
-
-%end
-
-%hook UIImageView // Prysm support glyphs
-
-- (UIColor*)tintColor {
-    if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"] withFallback:@"#147efb"] : %orig;
+    - (BOOL)_textColorFollowsTintColor {
+        return enabled ? YES : %orig;
     }
-    return %orig;
-}
 
-%end
-
-%hook UILabel // Prysm support battery label
-
-- (BOOL)_textColorFollowsTintColor {
-    return enabled ? YES : %orig;
-}
-
-- (id)tintColor {
-    if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
+    - (id)tintColor {
         return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"stringsColor"] withFallback:@"#147efb"] : %orig;
     }
-}
+
+    %end
+
+    %hook _UIStaticBatteryView // CC Battery
+
+    - (UIColor*)bodyColor {
+        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"] withFallback:@"#147efb"] : %orig;
+    }
+
+    - (UIColor*)fillColor {
+        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"] withFallback:@"#147efb"] : %orig;
+    }
+
+    %end
+
+    %hook _UIBatteryView // Battery
+
+    - (UIColor*)bodyColor {
+        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"] withFallback:@"#147efb"] : %orig;
+    }
+
+    - (UIColor*)fillColor {
+        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"] withFallback:@"#147efb"] : %orig;
+    }
+
+    %end
+
+    %hook _UIStatusBarSignalView // LTE bars
+
+    - (UIColor*)activeColor {
+        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOnColor"] withFallback:@"#147efb"] : %orig;
+    }
+
+    - (UIColor*)inactiveColor {
+        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOffColor"] withFallback:@"#147efb"] : %orig;
+    }
+
+    %end
+
+    %hook _UIStatusBarWifiSignalView // Wifi icon
+
+    - (UIColor*)activeColor {
+        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOnColor"] withFallback:@"#147efb"] : %orig;
+    }
+
+    - (UIColor*)inactiveColor {
+        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOffColor"] withFallback:@"#147efb"] : %orig;
+    }
+
+    %end
+
+    %hook JCESBShapeView // Juice Beta support
+
+    - (UIColor*)statusBarFillColour {
+        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"] withFallback:@"#147efb"] : %orig;
+    }
+
+    %end
+
+    %hook _UIStatusBarImageView // Small logos in status bar (Rotation, DND, Alarm...)
+
+    - (UIColor*)tintColor {
+        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"] withFallback:@"#147efb"] : %orig;
+    }
+
+    %end
 
 %end
+
+%group PrysmSupport
+
+    %hook UIImageView // Prysm support glyphs
+
+    - (UIColor*)tintColor {
+        if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
+            return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"] withFallback:@"#147efb"] : %orig;
+        }
+        return %orig;
+    }
+
+    %end
+
+    %hook UILabel // Prysm support battery label
+
+    - (BOOL)_textColorFollowsTintColor {
+        if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
+            return enabled ? YES : %orig;
+        }
+        return %orig;
+    }
+
+    - (id)tintColor {
+        if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
+            return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"stringsColor"] withFallback:@"#147efb"] : %orig;
+        }
+        return %orig;
+    }
+
+    %end
 
 %end
 
@@ -142,5 +150,6 @@
     [prefs registerObject:&otherGlyphsColorValue default:@"147efb" forKey:@"otherGlyphsColor"];
     if (enabled) {
         %init(SBColors);
+        %init(PrysmSupport);
     }
 }

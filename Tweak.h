@@ -32,6 +32,14 @@ NSString* otherGlyphsColorValue = @"#147efb";
 @interface _UIStatusBarStringView : UILabel
 @end
 
+@interface UIImageView (PrysmSupport)
+-(id)_viewControllerForAncestor;
+@end
+
+@interface UILabel (PrysmSupport)
+-(id)_viewControllerForAncestor;
+@end
+
 @interface _UIBatteryView : UIView
 @property (nonatomic, copy) UIColor *bodyColor;
 @property (nonatomic, copy) UIColor *fillColor;
