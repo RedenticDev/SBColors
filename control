@@ -1,6 +1,6 @@
 Package: com.redenticdev.sbcolors
 Name: SBColors
-Depends: mobilesubstrate, firmware (>= 13), ws.hbang.common (>= 1.11)
+Depends: mobilesubstrate, preferenceloader, firmware (>= 13), ws.hbang.common (>= 1.11), com.spark.libsparkcolourpicker
 Version: 1.0.0
 Architecture: iphoneos-arm
 Description: Easily change your status bar colors!

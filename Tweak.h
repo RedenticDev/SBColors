@@ -1,8 +1,18 @@
 #import <UIKit/UIKit.h>
 #import <Cephei/HBPreferences.h>
+#import "SparkColourPickerUtils.h"
 
 BOOL enabled = YES;
 HBPreferences *prefs;
+
+NSString* timeNetworkLTEColorValue = @"#147efb";
+NSString* batteryBodyColorValue = @"#147efb";
+NSString* batteryFillColorValue = @"#147efb";
+NSString* LTESignalActiveColorValue = @"#147efb";
+NSString* LTESignalInactiveColorValue = @"#147efb";
+NSString* WiFiActiveColorValue = @"#147efb";
+NSString* WiFiInactiveColorValue = @"#147efb";
+NSString* otherGlyphsColorValue = @"#147efb";
 
 @interface _UIStatusBarPersistentAnimationView : UIView
 @end
