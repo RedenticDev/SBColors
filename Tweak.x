@@ -137,6 +137,7 @@
         }
     }
     if (!shouldLoad) return;
+    
 
     prefs = [[HBPreferences alloc] initWithIdentifier:@"com.redenticdev.sbcolors"];
     [prefs registerBool:&enabled default:YES forKey:@"Enabled"];

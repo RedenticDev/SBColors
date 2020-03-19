@@ -85,7 +85,7 @@
     CGRect frame = self.table.bounds;
     frame.origin.y = -frame.size.height;
 
-    self.navigationController.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.64 green:0.67 blue:1.00 alpha:1.0];
+    self.navigationController.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.70 green:0.56 blue:0.95 alpha:1.00];
     [self.navigationController.navigationController.navigationBar setShadowImage: [UIImage new]];
     self.navigationController.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationController.navigationBar.translucent = NO;
@@ -123,15 +123,40 @@
     self.headerImageView.frame = CGRectMake(0, offsetY, self.headerView.frame.size.width, 200 - offsetY);
 }
 
--(void)respring {
+- (void)resetPrompt {
+    UIAlertController *resetAlert = [UIAlertController alertControllerWithTitle:@"SBColors"
+	message:@"Do you really want to reset SBColors preferences?"
+	preferredStyle:UIAlertControllerStyleActionSheet];
+	
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
+            [self resetPreferences];
+	}];
+	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleCancel handler:nil];
+
+	[resetAlert addAction:confirmAction];
+	[resetAlert addAction:cancelAction];
+	[self presentViewController:resetAlert animated:YES completion:nil];
+}
+
+- (void)resetPreferences {
+    HBPreferences *pfs = [[HBPreferences alloc] initWithIdentifier:@"com.redenticdev.sbcolors"];
+    for (NSString *key in [pfs dictionaryRepresentation]) {
+        [pfs removeObjectForKey:key];
+    }
+
+    [self respringUtil];
+}
+
+- (void)respring {
 	UIAlertController *respring = [UIAlertController alertControllerWithTitle:@"SBColors"
-													 message:@"Do you really want to Respring?"
-													 preferredStyle:UIAlertControllerStyleAlert];
+													 message:@"Do you really want to respring?"
+													 preferredStyle:UIAlertControllerStyleActionSheet];
 	UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
 			[self respringUtil];
 	}];
 
 	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
 	[respring addAction:confirmAction];
 	[respring addAction:cancelAction];
 	[self presentViewController:respring animated:YES completion:nil];
@@ -139,7 +164,7 @@
 }
 
 -(void)respringUtil {
-	NSTask *t = [[NSTask alloc] init];
+	NSTask *t = [[[NSTask alloc] init] autorelease];
     [t setLaunchPath:@"/usr/bin/killall"];
     [t setArguments:[NSArray arrayWithObjects:@"backboardd", nil]];
     [t launch];

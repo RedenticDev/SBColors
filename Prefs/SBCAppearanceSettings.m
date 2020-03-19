@@ -3,7 +3,7 @@
 @implementation SBCAppearanceSettings
 
 -(UIColor *)tintColor {
-    return [UIColor colorWithRed:0.64 green:0.67 blue:1.00 alpha:1.0];;
+    return [UIColor colorWithRed:0.70 green:0.56 blue:0.95 alpha:1.00];
 }
 
 -(UIColor *)statusBarTintColor {
@@ -23,7 +23,7 @@
 }
 
 -(UIColor *)navigationBarBackgroundColor {
-    return [UIColor colorWithRed:0.64 green:0.67 blue:1.00 alpha:1.0];;
+    return [UIColor colorWithRed:0.70 green:0.56 blue:0.95 alpha:1.00];
 }
 
 -(BOOL)translucentNavigationBar {
