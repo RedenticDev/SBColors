@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "Tweak.h"
+#import "SBColors.h"
 
 %group SBColors
 
@@ -10,7 +10,7 @@
     }
 
     - (id)tintColor {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"stringsColor"] withFallback:@"#147efb"] : %orig;
+        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"stringsColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -18,11 +18,11 @@
     %hook _UIStaticBatteryView // CC Battery
 
     - (UIColor*)bodyColor {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"] withFallback:@"#147efb"] : %orig;
+        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"], @"#147efb") : %orig;
     }
 
     - (UIColor*)fillColor {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"] withFallback:@"#147efb"] : %orig;
+        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -30,11 +30,11 @@
     %hook _UIBatteryView // Battery
 
     - (UIColor*)bodyColor {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"] withFallback:@"#147efb"] : %orig;
+        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"], @"#147efb") : %orig;
     }
 
     - (UIColor*)fillColor {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"] withFallback:@"#147efb"] : %orig;
+        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -42,11 +42,11 @@
     %hook _UIStatusBarSignalView // LTE bars
 
     - (UIColor*)activeColor {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOnColor"] withFallback:@"#147efb"] : %orig;
+        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOnColor"], @"#147efb") : %orig;
     }
 
     - (UIColor*)inactiveColor {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOffColor"] withFallback:@"#147efb"] : %orig;
+        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOffColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -54,11 +54,11 @@
     %hook _UIStatusBarWifiSignalView // Wifi icon
 
     - (UIColor*)activeColor {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOnColor"] withFallback:@"#147efb"] : %orig;
+        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOnColor"], @"#147efb") : %orig;
     }
 
     - (UIColor*)inactiveColor {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOffColor"] withFallback:@"#147efb"] : %orig;
+        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOffColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -66,7 +66,7 @@
     %hook JCESBShapeView // Juice Beta support
 
     - (UIColor*)statusBarFillColour {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"] withFallback:@"#147efb"] : %orig;
+        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -74,7 +74,7 @@
     %hook _UIStatusBarImageView // Small logos in status bar (Rotation, DND, Alarm...)
 
     - (UIColor*)tintColor {
-        return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"] withFallback:@"#147efb"] : %orig;
+        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -87,7 +87,7 @@
 
     - (UIColor*)tintColor {
         if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
-            return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"] withFallback:@"#147efb"] : %orig;
+            return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"], @"#147efb") : %orig;
         }
         return %orig;
     }
@@ -105,7 +105,7 @@
 
     - (id)tintColor {
         if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
-            return enabled ? [SparkColourPickerUtils colourWithString:[[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"stringsColor"] withFallback:@"#147efb"] : %orig;
+            return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"stringsColor"], @"#147efb") : %orig;
         }
         return %orig;
     }
