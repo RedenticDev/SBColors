@@ -10,7 +10,7 @@
     }
 
     - (id)tintColor {
-        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"stringsColor"], @"#147efb") : %orig;
+        return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"stringsColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -18,11 +18,11 @@
     %hook _UIStaticBatteryView // CC Battery
 
     - (UIColor*)bodyColor {
-        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"], @"#147efb") : %orig;
+        return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"], @"#147efb") : %orig;
     }
 
     - (UIColor*)fillColor {
-        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"], @"#147efb") : %orig;
+        return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -30,11 +30,11 @@
     %hook _UIBatteryView // Battery
 
     - (UIColor*)bodyColor {
-        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"], @"#147efb") : %orig;
+        return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryBodyColor"], @"#147efb") : %orig;
     }
 
     - (UIColor*)fillColor {
-        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"], @"#147efb") : %orig;
+        return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -42,11 +42,11 @@
     %hook _UIStatusBarSignalView // LTE bars
 
     - (UIColor*)activeColor {
-        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOnColor"], @"#147efb") : %orig;
+        return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOnColor"], @"#147efb") : %orig;
     }
 
     - (UIColor*)inactiveColor {
-        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOffColor"], @"#147efb") : %orig;
+        return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"LTESignalOffColor"], @"#1417fb") : %orig;
     }
 
     %end
@@ -54,11 +54,11 @@
     %hook _UIStatusBarWifiSignalView // Wifi icon
 
     - (UIColor*)activeColor {
-        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOnColor"], @"#147efb") : %orig;
+        return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOnColor"], @"#147efb") : %orig;
     }
 
     - (UIColor*)inactiveColor {
-        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOffColor"], @"#147efb") : %orig;
+        return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"wifiOffColor"], @"#1417fb") : %orig;
     }
 
     %end
@@ -66,7 +66,7 @@
     %hook JCESBShapeView // Juice Beta support
 
     - (UIColor*)statusBarFillColour {
-        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"], @"#147efb") : %orig;
+        return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"batteryFillColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -74,7 +74,7 @@
     %hook _UIStatusBarImageView // Small logos in status bar (Rotation, DND, Alarm...)
 
     - (UIColor*)tintColor {
-        return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"], @"#147efb") : %orig;
+        return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"], @"#147efb") : %orig;
     }
 
     %end
@@ -87,7 +87,7 @@
 
     - (UIColor*)tintColor {
         if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
-            return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"], @"#147efb") : %orig;
+            return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"otherGlyphsColor"], @"#147efb") : %orig;
         }
         return %orig;
     }
@@ -105,7 +105,7 @@
 
     - (id)tintColor {
         if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
-            return enabled ? LCPParseColorString([[NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"stringsColor"], @"#147efb") : %orig;
+            return enabled ? LCPParseColorString([[NSMutableDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"] objectForKey:@"stringsColor"], @"#147efb") : %orig;
         }
         return %orig;
     }
@@ -145,9 +145,9 @@
     [prefs registerObject:&batteryBodyColorValue default:@"147efb" forKey:@"batteryBodyColor"];
     [prefs registerObject:&batteryFillColorValue default:@"147efb" forKey:@"batteryFillColor"];
     [prefs registerObject:&LTESignalActiveColorValue default:@"147efb" forKey:@"LTESignalOnColor"];
-    [prefs registerObject:&LTESignalInactiveColorValue default:@"147efb" forKey:@"LTESignalOffColor"];
+    [prefs registerObject:&LTESignalInactiveColorValue default:@"1417fb" forKey:@"LTESignalOffColor"];
     [prefs registerObject:&WiFiActiveColorValue default:@"147efb" forKey:@"wifiOnColor"];
-    [prefs registerObject:&WiFiInactiveColorValue default:@"147efb" forKey:@"wifiOffColor"];
+    [prefs registerObject:&WiFiInactiveColorValue default:@"1417fb" forKey:@"wifiOffColor"];
     [prefs registerObject:&otherGlyphsColorValue default:@"147efb" forKey:@"otherGlyphsColor"];
     if (enabled) {
         %init(SBColors);

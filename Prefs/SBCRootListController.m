@@ -144,7 +144,7 @@
         [pfs removeObjectForKey:key];
     }
 
-    [self respringUtil];
+    //[self respringUtil];
 }
 
 - (void)respring {
