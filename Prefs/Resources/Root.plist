@@ -4,7 +4,7 @@
 <dict>
 	<key>items</key>
 	<array>
-	
+
 		<dict>
             <key>cell</key>
             <string>PSButtonCell</string>
@@ -50,7 +50,7 @@
 				<key>key</key>
 				<string>stringsColor</string>
 				<key>fallback</key>
-				<string>#147efb</string>
+				<string>#147dfb</string>
 				<key>alpha</key>
 				<false/>
 			</dict>
@@ -73,7 +73,7 @@
 				<key>key</key>
 				<string>batteryBodyColor</string>
 				<key>fallback</key>
-				<string>#147efb</string>
+				<string>#147dfb</string>
 				<key>alpha</key>
 				<false/>
 			</dict>
@@ -96,7 +96,7 @@
 				<key>key</key>
 				<string>batteryFillColor</string>
 				<key>fallback</key>
-				<string>#147efb</string>
+				<string>#147dfb</string>
 				<key>alpha</key>
 				<false/>
 			</dict>
@@ -119,7 +119,7 @@
 				<key>key</key>
 				<string>LTESignalOnColor</string>
 				<key>fallback</key>
-				<string>#147efb</string>
+				<string>#147dfb</string>
 				<key>alpha</key>
 				<false/>
 			</dict>
@@ -142,7 +142,7 @@
 				<key>key</key>
 				<string>LTESignalOffColor</string>
 				<key>fallback</key>
-				<string>#147efb</string>
+				<string>#1417fb</string>
 				<key>alpha</key>
 				<false/>
 			</dict>
@@ -165,7 +165,7 @@
 				<key>key</key>
 				<string>wifiOnColor</string>
 				<key>fallback</key>
-				<string>#147efb</string>
+				<string>#147dfb</string>
 				<key>alpha</key>
 				<false/>
 			</dict>
@@ -188,7 +188,7 @@
 				<key>key</key>
 				<string>wifiOffColor</string>
 				<key>fallback</key>
-				<string>#147efb</string>
+				<string>#1417fb</string>
 				<key>alpha</key>
 				<false/>
 			</dict>
@@ -211,7 +211,7 @@
 				<key>key</key>
 				<string>otherGlyphsColor</string>
 				<key>fallback</key>
-				<string>#147efb</string>
+				<string>#147dfb</string>
 				<key>alpha</key>
 				<false/>
 			</dict>
@@ -248,7 +248,7 @@
             <key>cell</key>
             <string>PSButtonCell</string>
             <key>label</key>
-            <string>@Litteeen - Development Help</string>
+            <string>Development Assistance</string>
             <key>cellClass</key>
             <string>HBTwitterCell</string>
             <key>label</key>

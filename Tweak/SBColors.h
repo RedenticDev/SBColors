@@ -5,14 +5,14 @@
 BOOL enabled = YES;
 HBPreferences *prefs;
 
-NSString* timeNetworkLTEColorValue = @"#147efb";
-NSString* batteryBodyColorValue = @"#147efb";
-NSString* batteryFillColorValue = @"#147efb";
-NSString* LTESignalActiveColorValue = @"#147efb";
+NSString* timeNetworkLTEColorValue = @"#147dfb";
+NSString* batteryBodyColorValue = @"#147dfb";
+NSString* batteryFillColorValue = @"#147dfb";
+NSString* LTESignalActiveColorValue = @"#147dfb";
 NSString* LTESignalInactiveColorValue = @"#1417fb";
-NSString* WiFiActiveColorValue = @"#147efb";
+NSString* WiFiActiveColorValue = @"#147dfb";
 NSString* WiFiInactiveColorValue = @"#1417fb";
-NSString* otherGlyphsColorValue = @"#147efb";
+NSString* otherGlyphsColorValue = @"#147dfb";
 
 @interface _UIStatusBarPersistentAnimationView : UIView
 @end
