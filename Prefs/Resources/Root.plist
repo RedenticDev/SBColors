@@ -256,6 +256,18 @@
             <key>user</key>
             <string>Litteeen</string>
         </dict>
+		<dict>
+            <key>cell</key>
+            <string>PSButtonCell</string>
+            <key>label</key>
+            <string>Tips & Assistance</string>
+            <key>cellClass</key>
+            <string>HBTwitterCell</string>
+            <key>label</key>
+            <string>NoisyFlake</string>
+            <key>user</key>
+            <string>NoisyFlake</string>
+        </dict>
 
 		<!-- Support Me -->
 		<dict>
