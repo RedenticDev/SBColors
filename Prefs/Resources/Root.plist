@@ -27,7 +27,7 @@
 			<key>key</key>
 			<string>Enabled</string>
 			<key>label</key>
-			<string>Enabled</string>
+			<string>Enabled (Respring required)</string>
 			<key>PostNotification</key>
 			<string>com.redenticdev.sbcolors/ReloadPrefs</string>
 		</dict>
