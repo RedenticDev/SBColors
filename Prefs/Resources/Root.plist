@@ -6,10 +6,6 @@
 	<array>
 
 		<dict>
-            <key>cell</key>
-            <string>PSButtonCell</string>
-            <key>label</key>
-            <string>@RedenticDev</string>
             <key>cellClass</key>
             <string>HBTwitterCell</string>
             <key>label</key>
@@ -56,8 +52,8 @@
 			</dict>
 			<key>label</key>
 			<string>Strings (Time, Carrier, LTE, Breadcrumb...)</string>
-			<key>key</key>
-			<string>stringsColor</string>
+			<key>icon</key>
+			<string>lte.png</string>
 			<key>PostNotification</key>
 			<string>com.redenticdev.sbcolors/ReloadPrefs</string>
 		</dict>
@@ -79,8 +75,8 @@
 			</dict>
 			<key>label</key>
 			<string>Battery Body</string>
-			<key>key</key>
-			<string>batteryBodyColor</string>
+			<key>icon</key>
+			<string>battery-body.png</string>
 			<key>PostNotification</key>
 			<string>com.redenticdev.sbcolors/ReloadPrefs</string>
 		</dict>
@@ -102,8 +98,8 @@
 			</dict>
 			<key>label</key>
 			<string>Battery Fill</string>
-			<key>key</key>
-			<string>batteryFillColor</string>
+			<key>icon</key>
+			<string>battery-fill.png</string>
 			<key>PostNotification</key>
 			<string>com.redenticdev.sbcolors/ReloadPrefs</string>
 		</dict>
@@ -125,8 +121,8 @@
 			</dict>
 			<key>label</key>
 			<string>LTE Signal (active)</string>
-			<key>key</key>
-			<string>LTESignalOnColor</string>
+			<key>icon</key>
+			<string>signal-active.png</string>
 			<key>PostNotification</key>
 			<string>com.redenticdev.sbcolors/ReloadPrefs</string>
 		</dict>
@@ -148,8 +144,8 @@
 			</dict>
 			<key>label</key>
 			<string>LTE Signal (inactive)</string>
-			<key>key</key>
-			<string>LTESignalOffColor</string>
+			<key>icon</key>
+			<string>signal-inactive.png</string>
 			<key>PostNotification</key>
 			<string>com.redenticdev.sbcolors/ReloadPrefs</string>
 		</dict>
@@ -171,8 +167,8 @@
 			</dict>
 			<key>label</key>
 			<string>WiFi (active)</string>
-			<key>key</key>
-			<string>wifiOnColor</string>
+			<key>icon</key>
+			<string>wifi-active.png</string>
 			<key>PostNotification</key>
 			<string>com.redenticdev.sbcolors/ReloadPrefs</string>
 		</dict>
@@ -194,8 +190,8 @@
 			</dict>
 			<key>label</key>
 			<string>WiFi (inactive)</string>
-			<key>key</key>
-			<string>wifiOffColor</string>
+			<key>icon</key>
+			<string>wifi-inactive.png</string>
 			<key>PostNotification</key>
 			<string>com.redenticdev.sbcolors/ReloadPrefs</string>
 		</dict>
@@ -217,8 +213,8 @@
 			</dict>
 			<key>label</key>
 			<string>Other glyphs (DND, Alarm...)</string>
-			<key>key</key>
-			<string>otherGlyphsColor</string>
+			<key>icon</key>
+			<string>orientation-lock.png</string>
 			<key>PostNotification</key>
 			<string>com.redenticdev.sbcolors/ReloadPrefs</string>
 		</dict>
@@ -245,10 +241,6 @@
 			<string>Special Thanks</string>
 		</dict>
 		<dict>
-            <key>cell</key>
-            <string>PSButtonCell</string>
-            <key>label</key>
-            <string>Development Assistance</string>
             <key>cellClass</key>
             <string>HBTwitterCell</string>
             <key>label</key>
@@ -257,10 +249,6 @@
             <string>Litteeen</string>
         </dict>
 		<dict>
-            <key>cell</key>
-            <string>PSButtonCell</string>
-            <key>label</key>
-            <string>Tips & Assistance</string>
             <key>cellClass</key>
             <string>HBTwitterCell</string>
             <key>label</key>
@@ -324,6 +312,8 @@
 			<string>SBColors by RedenticDev</string>
 			<key>isStaticText</key>
 			<true/>
+			<key>footerAlignment</key>
+			<real>1</real>
 		</dict>
 
 	</array>
