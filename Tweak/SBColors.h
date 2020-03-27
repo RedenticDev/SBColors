@@ -28,6 +28,9 @@ NSString* otherGlyphsColorValue = @"#147dfb";
 @property (nonatomic, copy) UIColor *activeColor;
 @end
 
+@interface _UIStatusBarCellularSignalView : _UIStatusBarSignalView
+@end
+
 @interface _UIStatusBarWifiSignalView : _UIStatusBarSignalView
 @end
 

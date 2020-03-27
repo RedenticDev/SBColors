@@ -39,7 +39,7 @@
 
     %end
 
-    %hook _UIStatusBarSignalView // LTE bars
+    %hook _UIStatusBarCellularSignalView // LTE bars
 
     - (UIColor*)activeColor {
         return enabled ? LCPParseColorString([prefsDict objectForKey:@"LTESignalOnColor"], @"#147dfb") : %orig;

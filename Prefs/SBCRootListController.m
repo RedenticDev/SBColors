@@ -8,10 +8,7 @@
     if (self) {
         HBAppearanceSettings *appearanceSettings = [[SBCAppearanceSettings alloc] init];
         self.hb_appearanceSettings = appearanceSettings;
-        self.respringButton = [[UIBarButtonItem alloc] initWithTitle:@"Respring" 
-                                    style:UIBarButtonItemStylePlain
-                                    target:self 
-                                    action:@selector(respring)];
+        self.respringButton = [[UIBarButtonItem alloc] initWithTitle:@"Respring" style:UIBarButtonItemStylePlain target:self action:@selector(respring)];
         self.respringButton.tintColor = [UIColor whiteColor];
         self.navigationItem.rightBarButtonItem = self.respringButton;
 
@@ -26,11 +23,11 @@
 
         self.iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,10,10)];
         self.iconView.contentMode = UIViewContentModeScaleAspectFit;
-        self.iconView.image = [UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/SBCPrefs.bundle/icon@2x.png"];
+        self.iconView.image = [UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/SBCPrefs.bundle/icon@3x.png"];
         self.iconView.translatesAutoresizingMaskIntoConstraints = NO;
         self.iconView.alpha = 0.0;
         [self.navigationItem.titleView addSubview:self.iconView];
-        
+
         [NSLayoutConstraint activateConstraints:@[
             [self.titleLabel.topAnchor constraintEqualToAnchor:self.navigationItem.titleView.topAnchor],
             [self.titleLabel.leadingAnchor constraintEqualToAnchor:self.navigationItem.titleView.leadingAnchor],
@@ -118,18 +115,19 @@
             self.titleLabel.alpha = 1.0;
         }];
     }
-    
+
     if (offsetY > 0) offsetY = 0;
     self.headerImageView.frame = CGRectMake(0, offsetY, self.headerView.frame.size.width, 200 - offsetY);
 }
 
+// Beginning of useful code
 - (void)resetPrompt {
     UIAlertController *resetAlert = [UIAlertController alertControllerWithTitle:@"SBColors"
-	message:@"Do you really want to reset SBColors preferences?"
+	message:@"Do you really want to reset SBColors preferences? This will respring your device."
 	preferredStyle:UIAlertControllerStyleActionSheet];
-	
+
     UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
-            [self resetPreferences];
+        [self resetPreferences];
 	}];
 	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleCancel handler:nil];
 
@@ -139,31 +137,26 @@
 }
 
 - (void)resetPreferences {
-    HBPreferences *pfs = [[HBPreferences alloc] initWithIdentifier:@"com.redenticdev.sbcolors"];
-    for (NSString *key in [pfs dictionaryRepresentation]) {
-        [pfs removeObjectForKey:key];
-    }
-
-    //[self respringUtil];
+    NSFileManager* manager = [NSFileManager defaultManager];
+    [manager removeItemAtPath:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist" error:nil];
+    [self respringUtil];
 }
 
 - (void)respring {
-	UIAlertController *respring = [UIAlertController alertControllerWithTitle:@"SBColors"
-													 message:@"Do you really want to respring?"
-													 preferredStyle:UIAlertControllerStyleActionSheet];
+	UIAlertController *respring = [UIAlertController alertControllerWithTitle:@"SBColors" message:@"Do you really want to respring?" preferredStyle:UIAlertControllerStyleActionSheet];
 	UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Confirm" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
-			[self respringUtil];
+		[self respringUtil];
 	}];
 
 	UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-    
+
 	[respring addAction:confirmAction];
 	[respring addAction:cancelAction];
 	[self presentViewController:respring animated:YES completion:nil];
 
 }
 
--(void)respringUtil {
+- (void)respringUtil {
 	NSTask *t = [[[NSTask alloc] init] autorelease];
     [t setLaunchPath:@"/usr/bin/killall"];
     [t setArguments:[NSArray arrayWithObjects:@"backboardd", nil]];
