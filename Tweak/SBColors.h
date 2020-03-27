@@ -2,9 +2,14 @@
 #import <Cephei/HBPreferences.h>
 #import "libcolorpicker.h"
 
-BOOL enabled = YES;
+// Preferences
 HBPreferences *prefs;
+NSDictionary* prefsDict;
 
+// Switches defaults states
+BOOL enabled = YES;
+
+// Color definitions
 NSString* timeNetworkLTEColorValue = @"#147dfb";
 NSString* batteryBodyColorValue = @"#147dfb";
 NSString* batteryFillColorValue = @"#147dfb";
@@ -14,6 +19,7 @@ NSString* WiFiActiveColorValue = @"#147dfb";
 NSString* WiFiInactiveColorValue = @"#1417fb";
 NSString* otherGlyphsColorValue = @"#147dfb";
 
+// Interfaces
 @interface _UIStatusBarPersistentAnimationView : UIView
 @end
 
@@ -32,11 +38,11 @@ NSString* otherGlyphsColorValue = @"#147dfb";
 @interface _UIStatusBarStringView : UILabel
 @end
 
-@interface UIImageView (PrysmSupport)
+@interface UIImageView (SBColors)
 -(id)_viewControllerForAncestor;
 @end
 
-@interface UILabel (PrysmSupport)
+@interface UILabel (SBColors)
 -(id)_viewControllerForAncestor;
 @end
 
