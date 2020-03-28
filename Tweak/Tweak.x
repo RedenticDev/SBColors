@@ -10,12 +10,16 @@
     }
 
     - (id)tintColor {
-        return enabled ? LCPParseColorString([prefsDict objectForKey:@"stringsColor"], @"#147dfb") : %orig;
+        if ([self fontStyle] == 1) { // Time String
+            return enabled ? LCPParseColorString([prefsDict objectForKey:@"timeColor"], @"#147dfb") : %orig;
+        } else { // Carrier, LTE, Breadcrumb
+            return enabled ? LCPParseColorString([prefsDict objectForKey:@"stringsColor"], @"#147dfb") : %orig;
+        }
     }
 
     %end
 
-    %hook _UIStaticBatteryView // CC Battery
+    %hook _UIStaticBatteryView // CC Battery - not available in iOS 11
 
     - (UIColor*)bodyColor {
         return enabled ? LCPParseColorString([prefsDict objectForKey:@"batteryBodyColor"], @"#147dfb") : %orig;
@@ -141,7 +145,8 @@
 
     prefs = [[HBPreferences alloc] initWithIdentifier:@"com.redenticdev.sbcolors"];
     [prefs registerBool:&enabled default:YES forKey:@"Enabled"];
-    [prefs registerObject:&timeNetworkLTEColorValue default:@"#147dfb" forKey:@"stringsColor"];
+    [prefs registerObject:&timeColorValue default:@"#147dfb" forKey:@"timeColor"];
+    [prefs registerObject:&carrierBreadcrumbLTEColorValue default:@"#147dfb" forKey:@"stringsColor"];
     [prefs registerObject:&batteryBodyColorValue default:@"#147dfb" forKey:@"batteryBodyColor"];
     [prefs registerObject:&batteryFillColorValue default:@"#147dfb" forKey:@"batteryFillColor"];
     [prefs registerObject:&LTESignalActiveColorValue default:@"#147dfb" forKey:@"LTESignalOnColor"];

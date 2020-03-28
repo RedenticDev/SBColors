@@ -10,7 +10,8 @@ NSDictionary* prefsDict;
 BOOL enabled = YES;
 
 // Color definitions
-NSString* timeNetworkLTEColorValue = @"#147dfb";
+NSString* timeColorValue = @"#147dfb";
+NSString* carrierBreadcrumbLTEColorValue = @"#147dfb";
 NSString* batteryBodyColorValue = @"#147dfb";
 NSString* batteryFillColorValue = @"#147dfb";
 NSString* LTESignalActiveColorValue = @"#147dfb";
@@ -39,6 +40,7 @@ NSString* otherGlyphsColorValue = @"#147dfb";
 @end
 
 @interface _UIStatusBarStringView : UILabel
+@property (assign, nonatomic) long long fontStyle;
 @end
 
 @interface UIImageView (SBColors)

@@ -13,7 +13,7 @@
         self.navigationItem.rightBarButtonItem = self.respringButton;
 
         self.navigationItem.titleView = [UIView new];
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,10,10)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
         self.titleLabel.font = [UIFont boldSystemFontOfSize:17];
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
         self.titleLabel.text = @"SBColors";
@@ -21,7 +21,7 @@
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self.navigationItem.titleView addSubview:self.titleLabel];
 
-        self.iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,10,10)];
+        self.iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
         self.iconView.contentMode = UIViewContentModeScaleAspectFit;
         self.iconView.image = [UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/SBCPrefs.bundle/icon@2x.png"];
         self.iconView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -54,8 +54,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0,0,200,200)];
-    self.headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,200,200)];
+    self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    self.headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
     self.headerImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.headerImageView.image = [UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/SBCPrefs.bundle/Banner.png"];
     self.headerImageView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -91,14 +91,14 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    [self.navigationController.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [self.navigationController.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
-    [self.navigationController.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
+    [self.navigationController.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -116,7 +116,9 @@
         }];
     }
 
-    if (offsetY > 0) offsetY = 0;
+    if (offsetY > 0) {
+        offsetY = 0;
+    }
     self.headerImageView.frame = CGRectMake(0, offsetY, self.headerView.frame.size.width, 200 - offsetY);
 }
 
@@ -137,8 +139,7 @@
 }
 
 - (void)resetPreferences {
-    NSFileManager* manager = [NSFileManager defaultManager];
-    [manager removeItemAtPath:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist" error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist" error:nil];
     [self respringUtil];
 }
 
