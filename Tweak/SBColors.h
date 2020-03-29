@@ -43,11 +43,11 @@ NSString* otherGlyphsColorValue = @"#147dfb";
 @property (assign, nonatomic) long long fontStyle;
 @end
 
-@interface UIImageView (SBColors)
+@interface UIImageView(SBColors)
 -(id)_viewControllerForAncestor;
 @end
 
-@interface UILabel (SBColors)
+@interface UILabel(SBColors)
 -(id)_viewControllerForAncestor;
 @end
 

@@ -86,8 +86,8 @@
     %hook UIImageView // Prysm support glyphs
 
     - (UIColor*)tintColor {
-        if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
-            return enabled ? LCPParseColorString([prefsDict objectForKey:@"otherGlyphsColor"], @"#147dfb") : %orig;
+        if (enabled && [[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
+            return LCPParseColorString([prefsDict objectForKey:@"otherGlyphsColor"], @"#147dfb");
         }
         return %orig;
     }
@@ -97,15 +97,15 @@
     %hook UILabel // Prysm support battery label
 
     - (BOOL)_textColorFollowsTintColor {
-        if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
-            return enabled ? YES : %orig;
+        if (enabled && [[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
+            return YES;
         }
         return %orig;
     }
 
     - (id)tintColor {
-        if ([[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
-            return enabled ? LCPParseColorString([prefsDict objectForKey:@"stringsColor"], @"#147dfb") : %orig;
+        if (enabled && [[self _viewControllerForAncestor] isKindOfClass:%c(PrysmMainPageViewController)]) {
+            return LCPParseColorString([prefsDict objectForKey:@"stringsColor"], @"#147dfb");
         }
         return %orig;
     }
@@ -115,7 +115,7 @@
 %end
 
 %ctor {
-    // This code avoid respring loops, only needed if you hook a system process like UIKit or Foundation system wide (in the plist file), also only if you use cephei
+    // This code avoid respring loops, only needed if you hook a system process like UIKit or Foundation system wide (in the plist file), also only if you use Cephei
     if (![NSProcessInfo processInfo]) return;
     NSString *processName = [NSProcessInfo processInfo].processName;
     bool isSpringboard = [@"SpringBoard" isEqualToString:processName];
