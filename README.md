@@ -1,4 +1,4 @@
-<img align="center" src="assets/icon-large.png" alt="SBColors logo">
+<img align="center" width=100 src="assets/icon-large.png" alt="SBColors logo">
 
 # SBColors
 Simple tweak to change colors on status bar for all iPhone on iOS 11/12/13 (iOS 11 is not confirmed to work but should work).
@@ -15,13 +15,10 @@ Simple tweak to change colors on status bar for all iPhone on iOS 11/12/13 (iOS 
 
 ## Installation
 ### Method 1
-The tweak is available on your favorite package manager in the [ Repository](https://.../depiction).
+The tweak is available on your favorite package manager in [my repository](https://redentic.dev).
 
 ### Method 2
 Clone this repository, and type in terminal `make package` from the folder of this repository.
-
-## Localization
-[Contribute here](https://github.com/RedenticDev/TweaksLocalizations)
 
 ## Bug Report
 Found a bug? [Open a new issue](https://github.com/RedenticDev/SBColors/issues/new).
