@@ -1,0 +1,36 @@
+{
+    SBCOLORS = "SBColors";
+    ENABLED = "Enabled";
+
+    SB_ITEMS_TITLE = "Status Bar Items";
+    TIME_PICKER = "Time";
+    STRINGS_PICKER = "Strings (Carrier, LTE, Breadcrumb)";
+    BATTERY_BODY_PICKER = "Battery Body";
+    BATTERY_FILL_PICKER = "Battery Fill";
+    LTE_ACTIVE_PICKER = "LTE Signal (active)";
+    LTE_INACTIVE_PICKER = "LTE Signal (inactive)";
+    WIFI_ACTIVE_PICKER = "WiFi (active)";
+    WIFI_INACTIVE_PICKER = "WiFi (inactive)";
+    ACTIVITY_INDICATOR_PICKER = "Activity Indicator";
+    OTHER_GLYPHS_PICKER = "Other glyphs (DND, Alarm...)";
+
+    OTHER_TITLE = "Other";
+    RESET_PREFS = "Reset Preferences";
+    RESET_CONFIRMATION = "Do you really want to reset SBColors preferences? This will respring your device.";
+    CONFIRM = "Confirm";
+    CANCEL = "Cancel";
+
+    SPECIAL_THANKS_TITLE = "Special Thanks";
+
+    CONTRIBUTORS = "Contributors";
+    CONTRIBUTE_TO_TRANSLATIONS = "📖 Contribute to translations!";
+
+    SUPPORT_TITLE = "Support";
+    BUY_ME_A_COFFEE = "☕️ Buy me a coffee";
+    FEATURE_REQUEST = "💡 Feature Request?";
+    MAIL = "Mail";
+    FOUND_A_BUG = "🐞 Found a Bug?";
+    SOURCE_CODE = "💻 Source Code";
+
+    FOOTER_TEXT = "SBColors by RedenticDev";
+}
