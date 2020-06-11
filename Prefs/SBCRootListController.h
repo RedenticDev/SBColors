@@ -18,7 +18,6 @@
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, retain) UIImageView *iconView;
 
--(void)resetPrompt;
 -(void)resetPreferences;
 -(void)respring;
 -(void)respringUtil;
