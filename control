@@ -4,7 +4,7 @@ Depends: mobilesubstrate, preferenceloader, firmware (>= 11), ws.hbang.common (>
 Version: 1.0.1
 Architecture: iphoneos-arm
 Description: Easily change your status bar colors!
-Icon: https://raw.githubusercontent.com/RedenticDev/SBColors/master/Prefs/Resources/icon-large.png
+Icon: https://redentic.dev/depictions/com.redenticdev.sbcolors/icon.png
 Depiction: https://redentic.dev/depictions/?p=com.redenticdev.sbcolors
 SileoDepiction: https://redentic.dev/depictions/com.redenticdev.sbcolors/sileo.json
 Maintainer: RedenticDev <redenticdev@gmail.com>
