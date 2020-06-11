@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+    <array>
+
+		<!-- Testers -->
+    	<dict>
+    		<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>TESTERS</string>
+    	</dict>
+		<dict>
+            <key>cellClass</key>
+            <string>HBTwitterCell</string>
+            <key>label</key>
+            <string>Pingu Jail</string>
+            <key>user</key>
+            <string>PinguJail</string>
+        </dict>
+
+		<!-- Translators -->
+		<!--<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>TRANSLATORS</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Français</string>
+		</dict>
+		<dict>
+            <key>cellClass</key>
+            <string>HBTwitterCell</string>
+            <key>label</key>
+            <string></string>
+            <key>user</key>
+            <string></string>
+        </dict>-->
+
+    </array>
+	<key>title</key>
+	<string>SBCOLORS</string>
+</dict>
+</plist>
