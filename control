@@ -1,9 +1,12 @@
 Package: com.redenticdev.sbcolors
 Name: SBColors
 Depends: mobilesubstrate, preferenceloader, firmware (>= 11), ws.hbang.common (>= 1.11), ws.hbang.alderis | org.thebigboss.libcolorpicker (>= 1.6.3)
-Version: 1.0.0
+Version: 1.0.1
 Architecture: iphoneos-arm
 Description: Easily change your status bar colors!
+Icon: https://raw.githubusercontent.com/RedenticDev/SBColors/master/Prefs/Resources/icon-large.png
+Depiction: https://redentic.dev/depictions/?p=com.redenticdev.sbcolors
+SileoDepiction: https://redentic.dev/depictions/com.redenticdev.sbcolors/sileo.json
 Maintainer: RedenticDev <redenticdev@gmail.com>
 Author: RedenticDev <redenticdev@gmail.com>
 Section: Tweaks
