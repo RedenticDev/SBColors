@@ -153,7 +153,7 @@ static void reloadPrefs() {
     @autoreleasepool {
         NSDictionary *prefsDict = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"];
         if (prefsDict) {
-            enabled = [prefsDict boolForKey:@"isEnabled"];
+            enabled = [[prefsDict objectForKey:@"isEnabled"] boolValue];
             timeColorValue = [prefsDict objectForKey:@"timeColor"];
             carrierBreadcrumbLTEColorValue = [prefsDict objectForKey:@"stringsColor"];
             batteryBodyColorValue = [prefsDict objectForKey:@"batteryBodyColor"];
