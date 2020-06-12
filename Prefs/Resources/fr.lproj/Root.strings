@@ -3,6 +3,7 @@
     ENABLED = "Activé";
 
     SB_ITEMS_TITLE = "Éléments de la barre de status";
+    COMPATS_EXPL = "Compatibilités liées :\nJuice = Intérieur de batterie\nÉléments Prysm = Texte\nGlyphes Prysm = Autres glyphes";
     TIME_PICKER = "Heure";
     STRINGS_PICKER = "Texte (Opérateur, 4G, Breadcrumb)";
     BATTERY_BODY_PICKER = "Contour de batterie";

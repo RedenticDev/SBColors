@@ -34,6 +34,8 @@
 			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>SB_ITEMS_TITLE</string>
+			<key>footerText</key>
+			<string>COMPATS_EXPL</string>
 		</dict>
 		<dict>
 			<key>cell</key>

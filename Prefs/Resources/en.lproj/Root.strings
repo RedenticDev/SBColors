@@ -3,6 +3,7 @@
     ENABLED = "Enabled";
 
     SB_ITEMS_TITLE = "Status Bar Items";
+    COMPATS_EXPL = "Linked compatibilities:\nJuice = Battery Fill\nPrysm items = Labels\nPrysm glyphs = Other glyphs";
     TIME_PICKER = "Time";
     STRINGS_PICKER = "Strings (Carrier, LTE, Breadcrumb)";
     BATTERY_BODY_PICKER = "Battery Body";
