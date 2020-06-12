@@ -197,10 +197,11 @@ static void sbcolors_reloadPrefs() {
         }
         if (!shouldLoad) return;
 
-        if (enabled) {
-            CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)sbcolors_reloadPrefs, CFSTR("com.redenticdev.sbcolors/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+        CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)sbcolors_reloadPrefs, CFSTR("com.redenticdev.sbcolors/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+        sbcolors_initPrefs();
+        sbcolors_reloadPrefs();
 
-            sbcolors_initPrefs();
+        if (enabled) {
             %init(SBColors);
         }
     }
