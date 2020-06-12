@@ -134,7 +134,7 @@
 
 %end
 
-static void initPrefs() {
+static void sbcolors_initPrefs() {
     HBPreferences *prefs = [[HBPreferences alloc] initWithIdentifier:@"com.redenticdev.sbcolors"];
     [prefs registerBool:&enabled default:YES forKey:@"isEnabled"];
     [prefs registerObject:&timeColorValue default:timeColorValue forKey:@"timeColor"];
@@ -149,7 +149,7 @@ static void initPrefs() {
     [prefs registerObject:&otherGlyphsColorValue default:otherGlyphsColorValue forKey:@"otherGlyphsColor"];
 }
 
-static void reloadPrefs() {
+static void sbcolors_reloadPrefs() {
     @autoreleasepool {
         NSDictionary *prefsDict = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/com.redenticdev.sbcolors.plist"];
         if (prefsDict) {
@@ -198,9 +198,9 @@ static void reloadPrefs() {
         if (!shouldLoad) return;
 
         if (enabled) {
-            CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)reloadPrefs, CFSTR("com.redenticdev.sbcolors/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+            CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)sbcolors_reloadPrefs, CFSTR("com.redenticdev.sbcolors/ReloadPrefs"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 
-            initPrefs();
+            sbcolors_initPrefs();
             %init(SBColors);
         }
     }
